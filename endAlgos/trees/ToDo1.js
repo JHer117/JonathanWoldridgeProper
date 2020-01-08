@@ -5,19 +5,16 @@ class BSTNode{
         this.right = null;
     }
 }
-
 class BST {
     constructor() {
         this.root = null;
     }
-
     size(node=this.root){
         if(node ===null){
             return 0;
         }
         return 1 + this.size(node.left) + this.size(node.right);
     }
-
     contains(value, node = this.root) {
         if(node === null) {
             return false;
@@ -27,14 +24,12 @@ class BST {
         }
         if(value <node.value){
             return this.contains(value, node.left);
-
         }
             else{
                 return this.contains(value, node.right);
                 
         }
     }
-
     add(value, node=this.root) {
         
         if(this.root = null) {

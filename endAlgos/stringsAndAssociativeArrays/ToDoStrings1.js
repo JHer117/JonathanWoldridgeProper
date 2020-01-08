@@ -30,16 +30,39 @@ console.log(getDigits("0s1a3y5w7h9a2t4?6!8?0"));
 function getDigits(str){
     newStr = []
     var splitStr = str.split("");
-    for (var index = 0; index < splitStr.length; index++){
-        console.log(splitStr)
-        if (typeof splitStr[index] != typeof(1)){
-            newStr += splitStr[index];
-            newStr.join("");
+    newStr = splitStr
+    for (var index = 0; index < newStr.length; index++){
+        var newInt = newStr[index];
+        console.log(newInt);
+        isLetter(newStr[index]);
+        if (isLetter(newStr[index]) == "letter"){
+            console.log(isLetter(newStr[index]) + " sadly.");
         }
     }
     return newStr;
 }
 console.log(getDigits("0s1a3y5w7h9a2t4?6!8?0"));
+
+function isLetter(string) {
+    if (string.length === 1 && string.match(/[a-z]/i)){
+        var test = "letter";
+        return test;
+    }
+    else {
+        var test = string;
+        return test;
+    }
+}
+
+function removeAt(array, position) {
+    var returnValue = array[position];
+    for (var index = position; index < array.length; index++) {
+        var currentValue = array[index + 1];
+        array[index] = currentValue;
+    }
+    array.length--;
+    return returnValue;
+}
 
 //ACRONYMS
 function acronyms(str){
